@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Think Before You Tap – Cyber Crime Awareness</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6fb;--ink:#12213f;--muted:#4a5a78;--line:#cbd5e6;--blue:#1c3f9e;--alert:#c8321f;--ok:#17794a;--panel:#fff;--amber:#ffd23f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1526;--ink:#e8eefc;--muted:#a3b2d1;--line:#2a3a5c;--blue:#7fa2ff;--alert:#ff7a66;--ok:#54d193;--panel:#15213a}}
+:root[data-theme="dark"]{--bg:#0d1526;--ink:#e8eefc;--muted:#a3b2d1;--line:#2a3a5c;--blue:#7fa2ff;--alert:#ff7a66;--ok:#54d193;--panel:#15213a}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{display:flex;flex-wrap:wrap;gap:6px 22px;padding:16px 0;font-weight:600}
+nav a{text-decoration:none;color:var(--ink)}
+nav a:hover{text-decoration:underline}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:30px 0 60px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.3rem);font-weight:800;letter-spacing:-.02em}
+.hero p{color:var(--muted);max-width:46ch}
+.phone{background:var(--panel);border:2px solid var(--ink);border-radius:26px;padding:18px;box-shadow:8px 8px 0 var(--blue)}
+.sms{background:var(--bg);border:1px solid var(--line);border-radius:14px 14px 14px 2px;padding:14px;font-size:.98rem}
+.sms small{display:block;color:var(--muted);margin-bottom:6px}
+.btns{display:flex;gap:10px;margin:14px 0 6px}
+button{font:600 1rem "Public Sans",sans-serif;border:2px solid var(--ink);background:var(--panel);color:var(--ink);padding:10px 16px;border-radius:10px;cursor:pointer;flex:1}
+button:hover{background:var(--amber);color:#12213f}
+#verdict{min-height:3.2em;font-size:.95rem}
+#verdict b.bad{color:var(--alert)}#verdict b.good{color:var(--ok)}
+section{padding:54px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:8px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 26px}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font:700 1.2rem "Bricolage Grotesque",sans-serif;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--blue);font-size:1.5rem;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 0;max-width:68ch}
+details .tip{color:var(--ok);font-weight:600}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:14px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.steps li:before{content:counter(s);background:var(--alert);color:#fff;font:800 1.3rem "Bricolage Grotesque",sans-serif;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.help{background:var(--blue);color:#fff;border-radius:18px;padding:26px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-top:28px}
+.help strong{font:800 3rem "Bricolage Grotesque",sans-serif;line-height:1}
+.help a{color:#fff}
+:root[data-theme="dark"] .help,:root:not([data-theme="light"]) .help{}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .help{background:#1c3f9e}}
+.habits{columns:2;column-gap:40px;padding-left:20px}
+.habits li{break-inside:avoid;margin-bottom:12px}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.q p{margin:0 0 10px;font-weight:600}
+.q .opts{display:flex;flex-wrap:wrap;gap:8px}
+.q button{flex:0 1 auto;font-weight:400}
+.q .fb{margin-top:8px;font-size:.95rem;color:var(--muted)}
+#score{font:800 1.4rem "Bricolage Grotesque",sans-serif}
+.tool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:18px}
+.tool h3{font-size:1.4rem;margin-bottom:6px}
+.tool p{margin:0 0 10px;color:var(--muted)}
+input[type=text],input[type=password]{width:100%;font:1rem "Public Sans",sans-serif;padding:10px 12px;border:2px solid var(--ink);border-radius:10px;background:var(--bg);color:var(--ink)}
+.bar{height:12px;background:var(--line);border-radius:6px;margin:10px 0;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--alert);transition:width .25s,background .25s}
+.res{margin:10px 0 0;padding-left:20px}
+.mf{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--line);padding:12px 0}
+.mf span{flex:1 1 260px;font-weight:600}
+.mf button{flex:0 0 auto}
+.mf em{flex:1 1 100%;font-style:normal;color:var(--muted);font-size:.95rem}
+.chk label{display:block;padding:6px 0;cursor:pointer}
+.chk input{margin-right:8px;transform:scale(1.2)}
+table{border-collapse:collapse;width:100%}
+td,th{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tw{overflow-x:auto}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.habits{columns:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="#crimes">Common cyber crimes</a><a href="#scammed">If you are scammed</a><a href="#habits">Stay safe</a><a href="#tools">Activities</a><a href="#law">Laws</a><a href="#quiz">Quiz</a></nav>
+
+<header class="hero">
+  <div>
+    <h1>Think before you tap.</h1>
+    <p>Most cyber crime starts with one message, one call or one link. This site shows how common frauds work, how to protect yourself, and what to do in the first hour if you are cheated online.</p>
+  </div>
+  <div class="phone" role="group" aria-label="Scam or safe practice message">
+    <div class="sms" id="sms"><small id="from"></small><span id="msg"></span></div>
+    <div class="btns"><button id="bScam">Scam</button><button id="bSafe">Safe</button></div>
+    <div id="verdict" aria-live="polite">Read the message. Would you trust it?</div>
+  </div>
+</header>
+
+<section id="crimes">
+  <h2>Common cyber crimes</h2>
+  <p class="lead">Select a crime to see how it works and how to avoid it.</p>
+  <details><summary>Phishing and fake links</summary>
+    <p>Fraudsters send SMS, email or WhatsApp messages that look like they come from a bank, courier or government office. The link opens a copy of the real site and steals your login, card number or OTP.</p>
+    <p class="tip">Never open links from unknown senders. Type the bank's address yourself or use its official app.</p></details>
+  <details><summary>OTP and UPI fraud</summary>
+    <p>A caller pretends to be from your bank or an "offer" and asks for an OTP, PIN, or asks you to approve a "collect request". Approving a request sends money out of your account.</p>
+    <p class="tip">You never enter a PIN to receive money. No bank asks for your OTP or PIN.</p></details>
+  <details><summary>Digital arrest and fake officer calls</summary>
+    <p>Scammers pose as police, customs or courier staff, say you are involved in a crime and keep you on a video call to force you to transfer money. Real agencies do not arrest people over video call or ask for payment to "settle" a case.</p>
+    <p class="tip">Hang up, do not pay, and call 1930.</p></details>
+  <details><summary>Fake jobs and investment schemes</summary>
+    <p>Offers of easy money for liking videos, part-time tasks or "guaranteed" trading returns. Early small payouts build trust, then victims are asked to deposit larger amounts that never come back.</p>
+    <p class="tip">Genuine jobs never ask you to pay a fee. Guaranteed high returns are a warning sign.</p></details>
+  <details><summary>Social media impersonation and sextortion</summary>
+    <p>Criminals clone a friend's profile to ask for urgent money, or trick people into private video chats and then threaten to leak recordings. Both rely on fear and urgency.</p>
+    <p class="tip">Verify by calling the person. Do not pay a blackmailer. Save the chat and report it.</p></details>
+  <details><summary>Malware and fake apps</summary>
+    <p>Apps or files sent through chat (for example an "APK" for a challan, KYC or a free gift) can read your SMS and control your phone.</p>
+    <p class="tip">Install apps only from the official Play Store or App Store, and keep updates on.</p></details>
+</section>
+
+<section id="scammed">
+  <h2>If you are scammed, act fast</h2>
+  <p class="lead">Money reported quickly has a better chance of being frozen. Do these in order.</p>
+  <ol class="steps">
+    <li><span><b>Call 1930</b> (National Cyber Crime Helpline) right away and give the transaction details.</span></li>
+    <li><span><b>Call your bank</b> to block the card, UPI or net banking and ask them to flag the transaction.</span></li>
+    <li><span><b>File a complaint</b> on <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a> with screenshots, phone numbers, UPI IDs and transaction IDs.</span></li>
+    <li><span><b>Keep the evidence.</b> Do not delete chats, call logs or messages. Change your passwords.</span></li>
+  </ol>
+  <div class="help"><div><strong>1930</strong><br>National Cyber Crime Helpline</div><div>Report online at <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a></div></div>
+</section>
+
+<section id="habits">
+  <h2>Habits that keep you safe</h2>
+  <p class="lead">Small routines that block most attacks.</p>
+  <ul class="habits">
+    <li>Use a different strong password for each important account and a password manager.</li>
+    <li>Turn on two-step verification for email, social media and banking.</li>
+    <li>Pause when a message creates panic or a deadline. Scammers depend on speed.</li>
+    <li>Share OTPs, PINs and CVV with nobody, including "bank staff".</li>
+    <li>Avoid public Wi-Fi for banking and keep your phone and apps updated.</li>
+    <li>Check the sender's number, web address and spelling before you trust a message.</li>
+    <li>Keep social media profiles private and limit personal details you post.</li>
+    <li>Tell family members, especially elders, about these tricks.</li>
+  </ul>
+</section>
+
+<section id="tools">
+  <h2>Try it yourself</h2>
+  <p class="lead">Four activities to practise. Nothing you type is stored or sent anywhere.</p>
+  <div class="tool"><h3>Password strength checker</h3><p>Type a sample password (do not use your real one).</p>
+    <input type="password" id="pw" autocomplete="off" aria-label="Sample password"><div class="bar"><i id="pwb"></i></div><div id="pwt" aria-live="polite">Start typing to see the strength.</div></div>
+  <div class="tool"><h3>Link inspector</h3><p>Paste a suspicious link. This checks common warning signs only, so it is a learning aid and not a guarantee.</p>
+    <input type="text" id="lk" placeholder="http://example-bank-kyc.xyz/login" aria-label="Link to inspect"><div class="btns"><button id="lkb">Inspect link</button></div><div id="lkr" aria-live="polite"></div></div>
+  <div class="tool"><h3>Myth or fact?</h3><p>Decide, then see the answer.</p><div id="mf"></div></div>
+  <div class="tool chk"><h3>My safety checklist</h3><p>Tick what you already do.</p><div id="ck"></div><div class="bar"><i id="ckb"></i></div><div id="ckt" aria-live="polite"></div></div>
+</section>
+
+<section id="law">
+  <h2>Laws that protect you</h2>
+  <p class="lead">Cyber crimes are punishable in India. These are some of the main provisions. Check official sources for the full text.</p>
+  <div class="tw"><table><thead><tr><th>Provision</th><th>What it covers</th></tr></thead><tbody>
+  <tr><td>IT Act 2000, Section 43</td><td>Unauthorised access to a computer or data, and damage to it. Compensation can be claimed.</td></tr>
+  <tr><td>IT Act, Section 66C</td><td>Identity theft, such as misusing someone's password or digital signature.</td></tr>
+  <tr><td>IT Act, Section 66D</td><td>Cheating by pretending to be someone else using a computer or phone.</td></tr>
+  <tr><td>IT Act, Section 66E</td><td>Violating privacy by capturing or sharing private images.</td></tr>
+  <tr><td>IT Act, Section 67</td><td>Publishing or sending obscene material electronically.</td></tr>
+  <tr><td>Bharatiya Nyaya Sanhita, Section 318</td><td>Cheating, which applies to many online frauds.</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="quiz">
+  <h2>Test yourself</h2>
+  <p class="lead">Three quick questions. <span id="score"></span></p>
+  <div id="qs"></div>
+</section>
+
+<footer>
+  <p>Cyber crime awareness project prepared by Dhanush S, B.Sc Computer Science (Cyber Security), SRM Institute of Science and Technology, Ramapuram, as part of an internship at the Commissioner Office, Cyber Crime Department. This is an educational student project, not an official government website. For emergencies or to report a crime, call 1930 or visit cybercrime.gov.in.</p>
+</footer>
+</div>
+
+<script>
+var sms=[
+ {f:"VM-HDFCBK",m:"Your account will be blocked today. Update PAN now: http://hdfc-kyc-update.in/login",scam:true,w:"A fake website address and a threat of blocking are classic phishing signs."},
+ {f:"Bank alert",m:"Rs 2,500 debited from A/c XX4821 at a store. If not you, call the number on the back of your card.",scam:false,w:"It sends no link and asks you to use the number printed on your card."},
+ {f:"+91 98xxxxxx21",m:"Congratulations! You won a Rs 25 lakh lottery. Pay Rs 4,999 processing fee to claim.",scam:true,w:"You cannot win a lottery you never entered, and real prizes never need a fee."},
+ {f:"Courier",m:"Your parcel is held. Install our app (parcel.apk) to reschedule delivery.",scam:true,w:"Apps sent as files can take over your phone. Use official apps only."},
+ {f:"Friend on WhatsApp",m:"Hi, I lost my phone. Can you send Rs 8,000 urgent? Use this new number, I'll return tomorrow.",scam:true,w:"Call your friend on their known number to confirm before sending money."}
+];
+var i=-1,cur=null,vd=document.getElementById("verdict");
+function nextMsg(){var n;do{n=Math.floor(Math.random()*sms.length)}while(n===i);i=n;cur=sms[i];
+ document.getElementById("from").textContent="From: "+cur.f;document.getElementById("msg").textContent=cur.m}
+function answer(g){var ok=(g===cur.scam);
+ vd.innerHTML="<b class='"+(ok?"good":"bad")+"'>"+(ok?"Correct. ":"Not quite. ")+"</b>This one is "+(cur.scam?"a scam":"genuine")+". "+cur.w+" <a href='#' id='nx'>Try another</a>";
+ document.getElementById("nx").onclick=function(e){e.preventDefault();vd.textContent="Read the message. Would you trust it?";nextMsg()}}
+document.getElementById("bScam").onclick=function(){answer(true)};
+document.getElementById("bSafe").onclick=function(){answer(false)};
+nextMsg();
+
+var quiz=[
+ {q:"A caller says you are under \"digital arrest\" and must stay on video and pay. What do you do?",o:["Pay to settle it","Hang up and call 1930","Share your Aadhaar"],a:1,e:"Police never arrest anyone over a video call or demand payment."},
+ {q:"Who can you safely tell your UPI PIN or OTP?",o:["Bank staff","A customer care agent","Nobody"],a:2,e:"Nobody ever needs your PIN or OTP, including your bank."},
+ {q:"You lost money to a fraud a few minutes ago. What is the first step?",o:["Wait a day","Call 1930 immediately","Post about it online"],a:1,e:"Fast reporting improves the chance that the money can be frozen."},
+ {q:"A stranger sends a collect request and says you will receive money after you approve. What happens?",o:["You receive money","Money leaves your account","Nothing"],a:1,e:"Approving a collect request and entering your PIN always sends money out."},
+ {q:"A job offer asks you to pay a registration fee first. This is most likely...",o:["Normal","A scam","A tax rule"],a:1,e:"Genuine employers do not charge candidates to hire them."},
+ {q:"Someone threatens to leak your private video unless you pay. What should you do?",o:["Pay quickly","Do not pay, save evidence, report","Delete everything"],a:1,e:"Paying leads to more demands. Keep chats and report to 1930 or cybercrime.gov.in."}
+];
+var got=0,done=0,box=document.getElementById("qs");
+quiz.forEach(function(x){var d=document.createElement("div");d.className="q";
+ var p=document.createElement("p");p.textContent=x.q;d.appendChild(p);
+ var o=document.createElement("div");o.className="opts";d.appendChild(o);
+ var fb=document.createElement("div");fb.className="fb";d.appendChild(fb);
+ x.o.forEach(function(t,k){var b=document.createElement("button");b.textContent=t;
+  b.onclick=function(){if(d.dataset.d)return;d.dataset.d=1;done++;
+   if(k===x.a){got++;fb.textContent="Correct. "+x.e}else{fb.textContent="Not quite. "+x.e}
+   document.getElementById("score").textContent="Score: "+got+" / "+quiz.length+(done===quiz.length?(got===quiz.length?" — well done.":" — read the sections above and try again."):"")};
+  o.appendChild(b)});
+ box.appendChild(d)});
+
+function $(x){return document.getElementById(x)}
+$("pw").oninput=function(){var v=this.value,n=0,c=["12345","password","qwerty","admin","india","abcde"],bad=c.some(function(w){return v.toLowerCase().indexOf(w)>-1});
+ if(v.length>=8)n++;if(v.length>=12)n++;if(/[a-z]/.test(v)&&/[A-Z]/.test(v))n++;if(/\d/.test(v))n++;if(/[^A-Za-z0-9]/.test(v))n++;if(bad)n=Math.min(n,1);
+ var L=["Very weak","Weak","Fair","Good","Strong","Very strong"],col=["#c8321f","#c8321f","#d98a00","#8a9a00","#17794a","#17794a"];
+ $("pwb").style.width=(v?(n+1)/6*100:0)+"%";$("pwb").style.background=col[n];
+ $("pwt").textContent=v?L[n]+(bad?". It contains a very common pattern.":v.length<12?". Try 12 or more characters.":". Use a unique password for each account."):"Start typing to see the strength."};
+$("lkb").onclick=function(){var u=$("lk").value.trim(),r=[],s=0,h="";if(!u){$("lkr").textContent="Paste a link first.";return}
+ var l=u.toLowerCase();try{h=new URL(/^https?:/.test(l)?l:"http://"+l).hostname}catch(e){$("lkr").textContent="That does not look like a valid link.";return}
+ if(!/^https:/.test(l)){r.push("Does not use https");s+=1}
+ if(l.indexOf("@")>-1){r.push("Contains @, which can hide the real address");s+=2}
+ if(/^\d+\.\d+\.\d+\.\d+$/.test(h)){r.push("Uses a number address instead of a name");s+=3}
+ if((h.match(/-/g)||[]).length>=2){r.push("Many hyphens in the domain");s+=1}
+ if(h.split(".").length>=5){r.push("Too many sub-domains, which can imitate a real site");s+=1}
+ if(/(^|\.)(bit\.ly|tinyurl\.com|t\.co|goo\.gl|cutt\.ly)$/.test(h)){r.push("Shortened link hides the destination");s+=2}
+ if(/\.(xyz|top|click|live|icu|buzz|shop)$/.test(h)){r.push("Uses a domain ending often seen in scams");s+=2}
+ if(/\.apk(\?|$)/.test(l)){r.push("Downloads an app file");s+=3}
+ var w=(l.match(/login|verify|kyc|update|secure|otp|reward|gift|refund|claim/g)||[]);if(w.length){r.push("Pressure words: "+w.join(", "));s+=Math.min(w.length,2)}
+ var t=s>=4?"<b class='bad'>High risk.</b> Do not open it.":s>=2?"<b class='bad'>Suspicious.</b> Verify before you open it.":"<b class='good'>No obvious red flags.</b> Still confirm the sender.";
+ $("lkr").innerHTML=t+(r.length?"<ul class='res'><li>"+r.join("</li><li>")+"</li></ul>":"")};
+var mf=[["If a website shows a padlock, it is safe.",0,"The padlock only means the connection is encrypted. Scam sites can have it too."],
+["Educated and young people also fall for cyber fraud.",1,"Anyone can be fooled when the trick uses fear or urgency."],
+["Reporting fast to 1930 can help freeze the money.",1,"The sooner it is reported, the better the chance of stopping the transfer."],
+["Incognito mode makes you anonymous online.",0,"It only stops your browser saving history on your device."],
+["Delete scam chats so they cannot harm you.",0,"Keep them. Chats and screenshots are evidence for the police."]];
+mf.forEach(function(x){var d=document.createElement("div");d.className="mf";d.innerHTML="<span></span><button>Myth</button><button>Fact</button><em></em>";
+ d.querySelector("span").textContent=x[0];var b=d.querySelectorAll("button");
+ [0,1].forEach(function(k){b[k].onclick=function(){d.querySelector("em").textContent=(k===x[1]?"Correct. ":"Not quite. ")+"It is a "+(x[1]?"fact":"myth")+". "+x[2]}});$("mf").appendChild(d)});
+var ck=["I use two-step verification on my email","I never share OTP or PIN with anyone","I install apps only from official stores","I check the sender before clicking links","I use different passwords for important accounts","I keep my social media profiles private"];
+ck.forEach(function(t,i){var l=document.createElement("label");l.innerHTML="<input type='checkbox'>";l.appendChild(document.createTextNode(t));
+ l.firstChild.onchange=function(){var n=document.querySelectorAll("#ck input:checked").length;$("ckb").style.width=n/ck.length*100+"%";$("ckb").style.background=n>=5?"#17794a":"#d98a00";
+  $("ckt").textContent="You follow "+n+" of "+ck.length+" safe habits."+(n===ck.length?" Excellent, share these habits with your family.":" Pick one more habit to start today.")};$("ck").appendChild(l)});
+</script>
+</body>
+</html>
